@@ -1,5 +1,5 @@
 # SummarizedExperiment-Extract
-Two scripts can be easily extract matrix and clinical metadata in SummarizedExperiment format
+Two scripts can be easily extract matrix and clinical metadata in SummarizedExperiment format, it can be used for extract files downloaded from TCGAbiolinks.
 **`SummarizedExperiment` format**
 
 - `assays`
@@ -24,7 +24,7 @@ Two scripts can be easily extract matrix and clinical metadata in SummarizedExpe
 # ExtractSE_assay
 - Function: Automatically convert the SummarizedExperiment format downloaded by TCGAbiolinks into the required matrix, and convert Ensembl ID into symbol ID, and keep the one with the largest mean value as the gene for the repeated probes.  
 - Required R package: "tidyverse","SummarizedExperiment"  
-- Input: data in the form of SummarizedExperiment  
+- Input: data in the form of SummarizedExperiment.  
 - Output: count,fpkm or tpm matrix with gene as row, samples as column.
 ```r
 ExtractSE_assay(data,
@@ -32,9 +32,9 @@ ExtractSE_assay(data,
                 choose_assay="tpm_unstrand")
 ```
 parameters:  
-- data: Data in SummarizedExperiment format downloaded with TCGAbiolinks  
-- choose_gene_type: You can choose as follows, "protein_coding" for mRNA, "lncRNA" for lncRNA  
-- choose_assay: You can choose the assay section above  
+- data: Data in SummarizedExperiment format downloaded with TCGAbiolinks.  
+- choose_gene_type: You can choose as follows, "protein_coding" for mRNA, "lncRNA" for lncRNA.  
+- choose_assay: You can choose the assay section above.  
 example：
 ```r
 library(TCGAbiolinks)
@@ -50,7 +50,7 @@ ExtractSE_assay(data = data,choose_gene_type = "protein_coding",choose_assay="tp
 head(se,1:3)
 ```
 # ExtractSE_clinical
-- On the basis of the above, you only need to input the SummarizedExperiment data downloaded by TCGAbiolinks into the data parameter to generate a dataframe named `clinical`
+- On the basis of the above, you only need to input the SummarizedExperiment data downloaded by TCGAbiolinks into the data parameter to generate a dataframe named `clinical`.
 example：
 ```r
 #extract clinical metadata
