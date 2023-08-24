@@ -46,7 +46,7 @@ GDCdownload(query, files.per.chunk = 100)
 GDCprepare(query,save = T,save.filename = "TCGA-CHOL_mRNA.Rdata"))
 load("TCGA-CHOL_mRNA.Rdata")
 #extract assay
-ExtractSE_assay(data = data,choose_gene_type = "protein_coding",choose_assay="tpm_unstrand")
+se <- ExtractSE_assay(data = data,choose_gene_type = "protein_coding",choose_assay="tpm_unstrand")
 head(se,1:3)
 ```
 # ExtractSE_clinical
@@ -54,6 +54,6 @@ head(se,1:3)
 example：
 ```r
 #extract clinical metadata
-ExtractSE_clinical(data)
+clinical <- ExtractSE_clinical(data)
 head(clinical)
 ```
